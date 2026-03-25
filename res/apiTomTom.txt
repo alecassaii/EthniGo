@@ -13,7 +13,8 @@ Ristoranti tipici di tot nazione:
   "polish":     7315037
 }
 
-https://nominatim.openstreetmap.org/search?format=json&city=<nome_città>
+https://nominatim.openstreetmap.org/search?format=json&city=<CITY_NAME>
+https://api.tomtom.com/search/2/categorySearch/ristorante.json?key=<API_KEY>&lat=<LAT>&lon=<LON>&categorySet=<CATEGORY_ID>
 
 delete acc -> DELETE FROM Utenti WHERE `Utenti`.`Email` = :email
 
