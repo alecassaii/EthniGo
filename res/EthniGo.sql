@@ -10,8 +10,7 @@ CREATE TABLE Utenti(
     Cognome VARCHAR(30) NOT NULL,
     Username VARCHAR(30) NOT NULL,
     Email VARCHAR(50) NOT NULL PRIMARY KEY,
-    Password VARCHAR(50) NOT NULL,
-    DataNascita DATE
+    Password VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Ristoranti(
