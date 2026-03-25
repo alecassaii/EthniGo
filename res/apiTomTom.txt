@@ -1,0 +1,33 @@
+Ristoranti tipici di tot nazione:
+{
+  "american":   7315003,
+  "african":    7315002,
+  "arab":       7315083,
+  "asian":      7315062,
+  "egyptian":   7315100,
+  "greek":      7315019,
+  "italian":    7315025,
+  "sudAmerica": 7315029,
+  "mexican":    7315033,
+  "vietnam":    7315051,
+  "polish":     7315037
+}
+
+https://nominatim.openstreetmap.org/search?format=json&city=<nome_città>
+
+delete acc -> DELETE FROM Utenti WHERE `Utenti`.`Email` = :email
+
+EthniGo/
+├── css/
+│   └── ...
+├── js/
+│   └── script.js
+├── res/
+│   └── ...
+├── src/
+│   ├── cambiaPsw.php
+│   ├── log_in.php
+│   ├── login.php
+│   ├── psw.php
+│   └── registra.php
+└── index.html
