@@ -11,7 +11,7 @@ This project uses two public APIs: TomTom and Nominatim.
 TomTom is used to actually locate the restaurants using coordinates (lat & lon)
 
 ```text
-...
+https://api.tomtom.com/search/2/categorySearch/ristorante.json?key=<API_KEY>&lat=<LAT>&lon=<LON>&categorySet=<CATEGORY_ID>
 ```
 
 ## Nominatim
