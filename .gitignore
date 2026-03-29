@@ -1,2 +1,3 @@
 .idea/
-info.txt
+res/.env.php
+res/apiTomTom.txt
