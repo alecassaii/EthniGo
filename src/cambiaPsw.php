@@ -1,16 +1,18 @@
 <?php
 session_start();
 
+$keys = include __DIR__ . '/../.env.php';
+
 $error = "";
 $email = $_SESSION['logged_user'];
 $pwd_vecchiaNoHash = $_POST['psw_vecchia'];
 $pwd_vecchia = sha1($pwd_vecchiaNoHash);
 $pwd_nuova = $_POST['psw_nuova'];
 
-$host = "localhost";
-$dbname = "EthniGo";
-$username = "studente";
-$password = "studente";
+$host = $keys['DB_HOST'];
+$dbname = $keys['DB_NAME'];
+$username = $keys['DB_USER'];
+$password = $keys['DB_PASS'];
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

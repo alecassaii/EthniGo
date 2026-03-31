@@ -18,7 +18,7 @@ CREATE TABLE Ristoranti(
     TipoCucina VARCHAR(30) NOT NULL
 );
 
-INSERT INTO Utenti VALUES('Default','User','defUsr', 'user@mail.com', SHA('123456');
+INSERT INTO Utenti VALUES('Default','User','defUsr', 'user@mail.com', SHA('123456'));
 
 INSERT INTO Ristoranti VALUES('7315003', 'american');
 INSERT INTO Ristoranti VALUES('7315002', 'african');

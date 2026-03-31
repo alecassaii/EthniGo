@@ -39,10 +39,12 @@ session_start();
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $host = "localhost";
-    $dbname = "EthniGo";
-    $username = "studente";
-    $password = "studente";
+    $keys = include __DIR__ . '/../.env.php';
+
+    $host = $keys['DB_HOST'];
+    $dbname = $keys['DB_NAME'];
+    $username = $keys['DB_USER'];
+    $password = $keys['DB_PASS'];
 
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
