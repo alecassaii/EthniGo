@@ -7,6 +7,6 @@
 	<script src="script.js" defer></script>
 </head>
 <body>
-<h1>ciao</h1>
+<h1>neghri</h1>
 </body>
 </html>
