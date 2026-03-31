@@ -29,4 +29,4 @@ https://nominatim.openstreetmap.org/search?format=json&city=<city_name>
 
 ## Website
 
-[EthniGo](https://placehold.co/1920x925?text=Site\nWIP)
+[EthniGo](https://example.com/)
