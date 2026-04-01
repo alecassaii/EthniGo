@@ -29,6 +29,7 @@
         <?php if (!empty($_GET['error'])) echo $_GET['error']; ?>
     </p>
     <button class="submit" type="submit">Login</button>
+    <a href="frgtPswd.php">Hai dimenticato la password?</a>
 
     <p class="signup-link">
         Non hai un account? <a href="registra.php">Registrati</a>
