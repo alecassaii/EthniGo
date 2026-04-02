@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$keys = include __DIR__ . '/../.env.php';
+$keys = include __DIR__ . '/../env.php';
 
 $error = "";
 $email = $_SESSION['logged_user'];

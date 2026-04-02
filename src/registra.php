@@ -39,7 +39,7 @@ session_start();
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $keys = include __DIR__ . '/../.env.php';
+    $keys = include __DIR__ . '/../env.php';
 
     $host = $keys['DB_HOST'];
     $dbname = $keys['DB_NAME'];
