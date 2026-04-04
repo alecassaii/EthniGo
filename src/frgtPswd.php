@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,7 +10,7 @@
     <title>Cambio password</title>
 </head>
 <body>
-<form class="form" method="post">
+<form class="form" action="frgtPswd.php" method="post">
 
     <p class="form-title">Inserisci la tua mail</p>
 
@@ -14,8 +18,15 @@
         <input placeholder="Email" type="email" name="email" required>
     </div>
 
-    <button class="submit" onclick="<?php session_start(); $_SESSION['logged_user'] = $_POST['email'] ?>">Procedi</button>
+    <button class="submit" type="submit">Procedi</button>
 
 </form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['logged_user'] = $_POST["email"];
+    header("location: psw.php");
+}
+?>
 </body>
 </html>

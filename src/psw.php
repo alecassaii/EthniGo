@@ -12,7 +12,7 @@ session_start();
 </head>
 <body onload="err()">
 
-<form class="form" action="cambiaPsw.php" method="post">
+<form class="form" action="cambiaPswd.php" method="post">
 
     <p class="form-title">Modifica password</p>
 
@@ -23,7 +23,7 @@ session_start();
     <div class="input-container">
         <input placeholder="Nuova password" type="password" name="psw_nuova" id="pswd_nuova" required>
 
-        <div style="display: flex; align-items: center; margin-top: 0px; margin-left: 17px;">
+        <div style="display: flex; align-items: center; margin-top: 0; margin-left: 17px;">
             <input type="checkbox" id="showPswd" style="width:12px; height:12px; margin-right:6px;"
                    onclick="togglePasswords()">
             <script>
