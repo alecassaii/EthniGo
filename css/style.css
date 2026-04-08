@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* ─── CSS Custom Properties ─────────────────── */
+:root {
+  /* Palette */
+  --color-bg:          #F5F1EA;      /* warm off-white, carta ingiallita */
+  --color-surface:     #FFFFFF;      /* card surface */
+  --color-surface-alt: #FDF9F4;     /* input background */
+
+  --color-primary:     #C9542A;      /* terracotta vivo */
+  --color-primary-h:   #A8401C;      /* hover del primary */
+  --color-primary-soft:#FAE0D3;      /* tinta pastello del primary */
+
+  --color-dark:        #1C2B3A;      /* antracite/blu notte */
+  --color-text:        #2E3C4A;      /* testo principale */
+  --color-text-muted:  #7A8C9A;      /* testo secondario / placeholder */
+
+  --color-border:      #E2D9CE;      /* bordo caldo neutro */
+  --color-error:       #B94040;
+  --color-success:     #3A7A5C;
+
+  /* Typography */
+  --font-display:      'Playfair Display', Georgia, serif;
+  --font-ui:           'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --sp-xs:  4px;
+  --sp-sm:  8px;
+  --sp-md:  16px;
+  --sp-lg:  24px;
+  --sp-xl:  40px;
+  --sp-2xl: 64px;
+
+  /* Radii */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-card:   0 4px 24px rgba(28, 43, 58, 0.09), 0 1px 4px rgba(28, 43, 58, 0.06);
+  --shadow-hover:  0 8px 36px rgba(28, 43, 58, 0.14), 0 2px 8px rgba(28, 43, 58, 0.08);
+  --shadow-input:  0 0 0 3px rgba(201, 84, 42, 0.18);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s var(--ease-out);
+}
+a:hover {
+  color: var(--color-primary-h);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── Background texture (grain sull'intera pagina) ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201, 84, 42, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 90%, rgba(28, 43, 58, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Layout: centred page wrapper ──────────── */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--sp-xl) var(--sp-md);
+}
+
+/* ─── Form Card (shared across all pages) ───── */
+.form {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-2xl) var(--sp-xl);
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+
+  /* Entrata */
+  animation: cardIn 0.55s var(--ease-out) both;
+}
+
+/* Striscia decorativa superiore (terracotta) */
+.form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), #E8874F);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(22px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ─── Form Title ─────────────────────────────── */
+.form-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-bottom: var(--sp-sm);
+}
+.form-title em {
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+/* ─── Input containers ───────────────────────── */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="password"] {
+  width: 100%;
+  padding: 13px var(--sp-md);
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-container input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.input-container input:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-input);
+  background: #fff;
+}
+
+/* Show-password row */
+.show-pswd-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-xs);
+  padding-left: 2px;
+}
+.show-pswd-row input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.show-pswd-row label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-weight: 400;
+  user-select: none;
+}
+
+/* ─── Submit Button ──────────────────────────── */
+.submit {
+  width: 100%;
+  padding: 14px var(--sp-md);
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), transform 0.15s, box-shadow 0.2s;
+  margin-top: var(--sp-xs);
+}
+.submit:hover {
+  background: var(--color-primary-h);
+  box-shadow: 0 4px 16px rgba(201, 84, 42, 0.35);
+  transform: translateY(-1px);
+}
+.submit:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ─── Feedback / Error paragraph ────────────── */
+#log {
+  font-size: 0.82rem;
+  color: var(--color-error);
+  min-height: 1.2em;
+  padding-left: var(--sp-xs);
+  font-weight: 500;
+}
+
+/* ─── Sign-up / utility links paragraph ─────── */
+.signup-link {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: var(--sp-xs);
+}
+
+/* ─── Divider ────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  color: var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 480px) {
+  .form {
+    padding: var(--sp-xl) var(--sp-lg);
+    border-radius: var(--radius-md);
+  }
+  .form-title {
+    font-size: 1.5rem;
+  }
+}

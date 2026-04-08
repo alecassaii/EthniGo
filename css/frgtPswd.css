@@ -1,0 +1,78 @@
+/* ─── Card più stretta: solo un campo ────────── */
+.form {
+  max-width: 400px;
+  text-align: center;
+}
+
+/* ─── Icona tappa sopra il titolo ────────────── */
+.form-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: var(--color-primary-soft);
+  border-radius: 50%;
+  margin: 0 auto var(--sp-md);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  animation: iconPop 0.5s var(--ease-out) 0.2s both;
+}
+
+@keyframes iconPop {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Sottotitolo descrittivo ─────────────────── */
+.form-subtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: calc(-1 * var(--sp-sm));
+  margin-bottom: var(--sp-sm);
+}
+
+/* ─── Input email centrato ────────────────────── */
+.input-container input[type="email"] {
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Pulsante con icona freccia ─────────────── */
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+}
+.submit::after {
+  content: '→';
+  font-size: 1rem;
+  transition: transform 0.2s var(--ease-out);
+}
+.submit:hover::after {
+  transform: translateX(4px);
+}
+
+/* ─── Link per tornare al login ───────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  margin-top: var(--sp-sm);
+}
+.back-link::before {
+  content: '←';
+}
+.back-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ─── Pagina con sfondo leggermente diverso ───── */
+body {
+  background-color: #EEE9E0;
+}

@@ -1,0 +1,55 @@
+/* ─── Intestazione sopra la card ────────────── */
+.page-wrapper::before {
+  content: 'Bentornato';
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--sp-md);
+  letter-spacing: 0.02em;
+
+  animation: fadeDown 0.5s var(--ease-out) both;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Sovrascrittura del titolo per questa pagina ── */
+.form-title::after {
+  content: '.';
+  color: var(--color-primary);
+}
+
+/* ─── Link "Hai dimenticato la password?" ───── */
+.form > a {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: calc(-1 * var(--sp-sm));
+  transition: color 0.2s;
+}
+.form > a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ─── Separatore visuale tra submit e signup ── */
+.form .submit + a + .signup-link {
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Icona decorativa nella card (Unicode fork) */
+.form::after {
+  content: '⸬';
+  position: absolute;
+  bottom: var(--sp-lg);
+  right: var(--sp-lg);
+  font-size: 1.5rem;
+  color: var(--color-primary-soft);
+  pointer-events: none;
+  opacity: 0.6;
+}

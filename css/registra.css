@@ -1,0 +1,73 @@
+/* ─── Card leggermente più larga (4 campi) ───── */
+.form {
+  max-width: 480px;
+}
+
+/* ─── Etichetta benvenuto sopra la card ──────── */
+.page-wrapper::before {
+  content: 'Unisciti alla community';
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--sp-md);
+  letter-spacing: 0.02em;
+
+  animation: fadeDown 0.5s var(--ease-out) both;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Griglia Nome + Cognome affiancati ──────── */
+.name-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+}
+
+/* ─── Stagger animation sugli input ─────────── */
+.input-container:nth-child(2) { animation-delay: 0.05s; }
+.input-container:nth-child(3) { animation-delay: 0.10s; }
+.input-container:nth-child(4) { animation-delay: 0.15s; }
+.input-container:nth-child(5) { animation-delay: 0.20s; }
+
+.input-container {
+  animation: inputIn 0.45s var(--ease-out) both;
+}
+
+@keyframes inputIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Nota password di default ───────────────── */
+.default-psw-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-sm);
+  background: var(--color-primary-soft);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--sp-sm) var(--sp-md);
+  font-size: 0.80rem;
+  color: var(--color-primary-h);
+  line-height: 1.5;
+  margin-top: var(--sp-xs);
+}
+.default-psw-note::before {
+  content: '⚑';
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── Responsive: nome+cognome su riga unica ─── */
+@media (max-width: 420px) {
+  .name-grid {
+    grid-template-columns: 1fr;
+  }
+}
