@@ -13,31 +13,33 @@ session_start();
     <link rel="stylesheet" href="../css/registra.css">
 </head>
 <body>
-<form class="form" action="registra.php" method="post">
-    <p class="form-title">Crea il tuo account</p>
+<div class="page-wrapper">
+    <form class="form" action="registra.php" method="post">
+        <p class="form-title">Crea il tuo account</p>
 
-    <div class="input-container">
-        <input placeholder="Nome" type="text" name="nome" required>
-    </div>
+        <div class="input-container">
+            <input placeholder="Nome" type="text" name="nome" required>
+        </div>
 
-    <div class="input-container">
-        <input placeholder="Cognome" type="text" name="cognome" required>
-    </div>
+        <div class="input-container">
+            <input placeholder="Cognome" type="text" name="cognome" required>
+        </div>
 
-    <div class="input-container">
-        <input placeholder="Username" type="text" name="username" required>
-    </div>
+        <div class="input-container">
+            <input placeholder="Username" type="text" name="username" required>
+        </div>
 
-    <div class="input-container">
-        <input placeholder="Email" type="email" name="email" required>
-    </div>
+        <div class="input-container">
+            <input placeholder="Email" type="email" name="email" required>
+        </div>
 
-    <button class="submit" type="submit">Registrati</button>
+        <button class="submit" type="submit">Registrati</button>
 
-    <p class="signup-link">
-        Hai già un account? <a href="log_in.php">Accedi</a>
-    </p>
-</form>
+        <p class="signup-link">
+            Hai già un account? <a href="log_in.php">Accedi</a>
+        </p>
+    </form>
+</div>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

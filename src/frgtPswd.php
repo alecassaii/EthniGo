@@ -13,17 +13,19 @@ session_start();
     <link rel="stylesheet" href="../css/frgtPswd.css">
 </head>
 <body>
-<form class="form" action="frgtPswd.php" method="post">
+<div class="page-wrapper">
+    <form class="form" action="frgtPswd.php" method="post">
 
-    <p class="form-title">Inserisci la tua mail</p>
+        <p class="form-title">Inserisci la tua mail</p>
 
-    <div class="input-container">
-        <input placeholder="Email" type="email" name="email" required>
-    </div>
+        <div class="input-container">
+            <input placeholder="Email" type="email" name="email" required>
+        </div>
 
-    <button class="submit" type="submit">Procedi</button>
+        <button class="submit" type="submit">Procedi</button>
 
-</form>
+    </form>
+</div>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
