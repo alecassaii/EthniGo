@@ -8,6 +8,9 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambio password</title>
+    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/frgtPswd.css">
 </head>
 <body>
 <form class="form" action="frgtPswd.php" method="post">

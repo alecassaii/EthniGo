@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accedi</title>
-    <script src="script.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/log_in.css">
 </head>
 <body onload="err()">
 <form class="form" action="login.php" method="post">
