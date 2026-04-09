@@ -21,7 +21,7 @@
         <div class="input-container">
             <input placeholder="Password" type="password" name="password" id="pswd" required>
 
-            <div style="display: flex; align-items: center; margin-top: 0; margin-left: 17px;">
+            <div class="show-pswd-row" style="display: flex; align-items: center; margin-top: 0; margin-left: 17px;">
                 <input type="checkbox" id="showPswd" style="width:12px; height:12px; margin-right:6px;"
                        onclick="pswd.type = this.checked ? 'text' : 'password'">
                 <label for="showPswd" style="font-size:12px; cursor:pointer;">Mostra password</label>

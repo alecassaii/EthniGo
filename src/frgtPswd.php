@@ -15,7 +15,7 @@ session_start();
 <body>
 <div class="page-wrapper">
     <form class="form" action="frgtPswd.php" method="post">
-
+		
         <p class="form-title">Inserisci la tua mail</p>
 
         <div class="input-container">

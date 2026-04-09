@@ -4,27 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EthniGo</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div class="background-image">
-    <iframe
-            src="res/ethnigo-banner.png"
-            frameborder="0">
-    </iframe>
 
+    <!-- Banner come sfondo full-screen -->
+    <iframe src="res/ethnigo-banner.png" frameborder="0" aria-hidden="true"></iframe>
+
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">EthniGo</div>
         <ul class="nav-links">
-            <li><a href="src/log_in.php">Login</a></li>
-            <li><a href="src/registra.php">Registrazione</a></li>
+            <li><a href="src/log_in.php">Accedi</a></li>
+            <li><a href="src/registra.php">Registrati</a></li>
         </ul>
     </nav>
 
+    <!-- Hero -->
     <div class="welcome">
-        <h1>Benvenuti su EthniGo</h1>
-        <p>Scopri il mondo nella tua città!!</p>
+        <span class="hero-badge">Guida dei sapori</span>
+        <h1>Scopri il mondo<br><em>nella tua città</em></h1>
+        <p>Ristoranti etnici, cucine lontane, esperienze autentiche — tutto a portata di mappa.</p>
+
+        <div class="welcome-cta">
+            <a href="src/registra.php" class="btn-primary">Inizia l'avventura</a>
+            <a href="src/log_in.php"   class="btn-secondary">Hai già un account?</a>
+        </div>
     </div>
+
+    <!-- Scroll indicator -->
+<!--    <div class="scroll-hint" aria-hidden="true">Esplora</div>-->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>
+            &copy; <script>document.write(new Date().getFullYear())</script>
+            <span class="footer-dot">·</span>
+            <strong>EthniGo</strong>
+            <span class="footer-dot">·</span>
+            Tutti i diritti riservati
+        </p>
+    </footer>
+
 </div>
 </body>
 </html>
