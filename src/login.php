@@ -28,7 +28,7 @@ try {
         if ($result['Password'] === '61768db8d1a38f1c16d3e6eea812ef423c739068') {   // psw di default (ABC123)
             echo "<script>
                         alert('Cambia la password di default con una a tua scelta!');
-                        window.location.href = '.php';
+                        window.location.href = 'psw.php';
                     </script>";
         } else header("Location: utente.php");
         exit();
