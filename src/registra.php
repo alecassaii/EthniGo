@@ -9,8 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrati</title>
     <script src="../js/script.js" defer></script>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/registra.css">
+<!--    <link rel="stylesheet" href="../css/style.css">-->
+<!--    <link rel="stylesheet" href="../css/registra.css">-->
 </head>
 <body>
 <div class="page-wrapper">
