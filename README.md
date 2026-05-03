@@ -25,8 +25,3 @@ Nominatim is used to get the city coordinates (lat & lon)
 
 ```text
 https://nominatim.openstreetmap.org/search?format=json&city=<city_name>
-```
-
-## Website
-
-[EthniGo](https://example.com/)
