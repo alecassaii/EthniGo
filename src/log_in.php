@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accedi</title>
     <script src="../js/script.js" defer></script>
-<!--    <link rel="stylesheet" href="../css/style.css">-->
-<!--    <link rel="stylesheet" href="../css/log_in.css">-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/log_in.css">
 </head>
 <body onload="err()">
 <div class="page-wrapper">
