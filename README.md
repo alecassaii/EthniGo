@@ -24,7 +24,7 @@ https://api.tomtom.com/search/2/categorySearch/ristorante.json?key=<API_KEY>&lat
 Nominatim is used to get the city coordinates (lat & lon)
 
 ```text
-https://nominatim.openstreetmap.org/search?format=json&city=<city_name>
+https://nominatim.openstreetmap.org/search?format=json&city=<CITY_NAME>
 ```
 
 ## Database
