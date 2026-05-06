@@ -30,4 +30,5 @@ https://nominatim.openstreetmap.org/search?format=json&city=<city_name>
 ## Database
 
 The database with the logins and restaurants IDs is inside the res/ folder.
-(N.B. the database is only for educational purposes and cannot be used in real life situations!!)
+
+(Note that this database is only for educational purposes and cannot be used in real life situations!!)
