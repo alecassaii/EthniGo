@@ -53,7 +53,7 @@ async function cityAPI() {
 let selectedCity = null;
 
 function outputCity(data) {
-    let html = "<div id='results-container'>";
+    let html = "<div id='results-container' style=\"width:340px\">";
     html += "<p>Risultati:</p>";
 
     for (let i = 0; i < data.length; i++) {
