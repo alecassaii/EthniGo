@@ -8,7 +8,7 @@ This project uses two public APIs: TomTom and Nominatim.
 
 ## TomTom
 
-TomTom is used to actually locate the restaurants using coordinates (lat & lon).
+TomTom is used to locate restaurants, using coordinates (lat & lon).
 
 To  get the API key you need to register on the developer page in TomTom website:
 ```text
@@ -25,3 +25,8 @@ Nominatim is used to get the city coordinates (lat & lon)
 
 ```text
 https://nominatim.openstreetmap.org/search?format=json&city=<city_name>
+
+## Database
+
+The database with the logins and restaurants IDs is inside the res/ folder.
+(N.B. the database is only for educational purposes and cannot be used in real life situations!!)
