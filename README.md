@@ -10,10 +10,16 @@ This project uses two public APIs: TomTom and Nominatim.
 
 TomTom is used to locate restaurants, using coordinates (lat & lon).
 
-To  get the API key you need to register on the developer page in TomTom website:
+To get the API key you need to login on the developer page in TomTom website:
 ```text
 https://developer.tomtom.com/
 ```
+
+If you register in 2026 or later, you need to go here:
+```text
+https://my.tomtom.com/
+```
+
 API link:
 ```text
 https://api.tomtom.com/search/2/categorySearch/ristorante.json?key=<API_KEY>&lat=<LAT>&lon=<LON>&categorySet=<CATEGORY_ID>

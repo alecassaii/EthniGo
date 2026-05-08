@@ -33,7 +33,7 @@ async function cityAPI() {
             }
         });
 
-        if (!response.ok) throw new Error(`Errore HTTP: ${response.status}`);
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
         const data = await response.json();
         console.log(JSON.stringify(data, null, 2))
@@ -46,14 +46,12 @@ async function cityAPI() {
 
     } catch (error) {
         outputElement.innerText = "Errore nella chiamata: " + error.message;
-        console.error("Dettagli errore:", error);
+        console.error("Error details:", error);
     }
 }
 
-let selectedCity = null;
-
 function outputCity(data) {
-    let html = "<div id='results-container' style=\"width:340px\">";
+    let html = "<div id='results-container' style='width: 95%'>";
     html += "<p>Risultati:</p>";
 
     for (let i = 0; i < data.length; i++) {
@@ -74,12 +72,17 @@ function setupCityClickListeners() {
             const lat = this.getAttribute('data-lat');
             const lon = this.getAttribute('data-lon');
             const name = this.textContent;
-
+            let selectedCity;
             selectedCity = { name, lat, lon };
-            console.log('Città selezionata:', selectedCity);
+            console.log('Selected cities:', selectedCity);
+            sendCity(selectedCity);
 
             buttons.forEach(b => b.style.backgroundColor = '#f9f9f9');      // reset highlight
             this.style.backgroundColor = '#e0e0e0';     // highlight clicked button
         });
     });
+}
+
+function sendCity(selectedCity) {
+    document.getElementById('hidden-city').value = JSON.stringify(selectedCity);
 }

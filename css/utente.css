@@ -182,7 +182,6 @@ body {
     flex-direction: column;
     gap: var(--sp-xs);
     margin-top: var(--sp-sm);
-    /* reset dal pre originale */
     white-space: normal;
     background: none;
     border: none;
@@ -221,7 +220,8 @@ body {
     border-color: var(--color-primary);
     background: var(--color-primary-soft);
     color: var(--color-primary-h);
-    transform: translateX(2px);
+    /*transform: translateX(2px);*/
+    transform: scale(0.98);
     box-shadow: var(--shadow-card);
     z-index: 2;
 }

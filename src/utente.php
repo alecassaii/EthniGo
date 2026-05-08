@@ -19,19 +19,20 @@ session_start();
     <!-- Header -->
     <div class="page-header">
         <span class="hero-badge">Guida dei sapori</span>
-        <h1>Trova la tua <em>città</em></h1>
-        <p>Cerca la tua posizione e scegli il tipo di cucina che ti ispira.</p>
+        <h1>Cerca la tua <em>città</em></h1>
+        <p>Trova la tua posizione e scegli il tipo di cucina che ti ispira.</p>
     </div>
 
     <!-- Search card -->
     <div class="search-card">
         <form action="trova-risto.php" method="post">
 
+            <input type="hidden" name="citta-scelta" id="hidden-city">
             <!-- Step 1: città -->
             <div>
                 <p class="step-label">Dove sei?</p>
                 <div class="city-group">
-                    <input id="city" type="text" placeholder="Cerca città (es: Milano)" required>
+                    <input id="city" type="text" placeholder="Cerca città (es: Milano)">
                     <button class="btn-cerca" id="button" type="button" onclick="cityAPI()">Cerca</button>
                 </div>
                 <pre id="output"></pre>
