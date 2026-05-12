@@ -42,22 +42,40 @@ session_start();
             <div class="step-divider">Poi scegli</div>
 
             <!-- Step 2: tipo cucina -->
+
+            <?php
+            $keys = include __DIR__ . '/../env.php';
+
+            $host = $keys['DB_HOST'];
+            $dbname = $keys['DB_NAME'];
+            $username = $keys['DB_USER'];
+            $password = $keys['DB_PASS'];
+
+            try {
+                $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $stmt = $conn->prepare("SELECT * FROM Ristoranti");
+                $stmt->execute();
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            } catch (PDOException $e) { $error = "Errore di connessione: " . $e->getMessage(); }
+            ?>
+
             <div>
                 <p class="step-label">Che cucina cerchi?</p>
                 <div class="select-wrapper">
                     <select name="opzioni" required>
                         <option value="" disabled selected hidden>Seleziona un'opzione</option>
-                        <option value="7315002">Africano</option>
-                        <option value="7315003">Americano</option>
-                        <option value="7315019">Greco</option>
-                        <option value="7315025">Italiano</option>
-                        <option value="7315029">Sud Americano</option>
-                        <option value="7315033">Messicano</option>
-                        <option value="7315037">Polacco</option>
-                        <option value="7315051">Vietnamita</option>
-                        <option value="7315062">Asiatico</option>
-                        <option value="7315083">Arabo</option>
-                        <option value="7315100">Egiziano</option>
+
+                        <?php if (!empty($result)): ?>
+                            <?php foreach ($result as $risto): ?>
+                                <option value="<?= htmlspecialchars($risto['ID']) ?>">
+                                    <?= htmlspecialchars($risto['TipoCucina']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
                     </select>
                 </div>
             </div>

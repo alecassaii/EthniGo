@@ -5,15 +5,6 @@ function err() {
     if (isReload) document.getElementById("log").innerText = "";
 }
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.filter = "blur(5px)";
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.filter = "none";
-}
-
 async function cityAPI() {
     const cityInput = document.getElementById("city").value;
     const outputElement = document.getElementById("output");
@@ -85,4 +76,21 @@ function setupCityClickListeners() {
 
 function sendCity(selectedCity) {
     document.getElementById('hidden-city').value = JSON.stringify(selectedCity);
+}
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('save-btn')) {
+        const restaurantRaw = e.target.getAttribute('data-info');
+
+        try {
+            const restaurant = JSON.parse(restaurantRaw);
+            saveRestaurant(restaurant);
+        } catch (error) {
+            console.error("Error parsing restaurant data:", error);
+        }
+    }
+});
+
+function saveRestaurant(restaurant) {
+    console.log('Saving restaurant:', restaurant.poi.name, "|",restaurant.address.freeformAddress, "|", restaurant.poi.phone, "|", restaurant.poi.url);
 }

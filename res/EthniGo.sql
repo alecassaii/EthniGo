@@ -20,14 +20,14 @@ CREATE TABLE Ristoranti(
 
 INSERT INTO Utenti VALUES('Default','User','defUsr', 'user@mail.com', SHA('123456'));
 
-INSERT INTO Ristoranti VALUES('7315003', 'american');
-INSERT INTO Ristoranti VALUES('7315002', 'african');
-INSERT INTO Ristoranti VALUES('7315083', 'arab');
-INSERT INTO Ristoranti VALUES('7315062', 'asian');
-INSERT INTO Ristoranti VALUES('7315100', 'egyptian');
-INSERT INTO Ristoranti VALUES('7315019', 'greek');
-INSERT INTO Ristoranti VALUES('7315025', 'italian');
-INSERT INTO Ristoranti VALUES('7315029', 'sudAmerica');
-INSERT INTO Ristoranti VALUES('7315033', 'mexican');
-INSERT INTO Ristoranti VALUES('7315051', 'vietnam');
-INSERT INTO Ristoranti VALUES('7315037', 'polish');
+INSERT INTO Ristoranti VALUES('7315003', 'Americano');
+INSERT INTO Ristoranti VALUES('7315002', 'Africano');
+INSERT INTO Ristoranti VALUES('7315083', 'Arabo');
+INSERT INTO Ristoranti VALUES('7315062', 'Asiatico');
+INSERT INTO Ristoranti VALUES('7315100', 'Egiziano');
+INSERT INTO Ristoranti VALUES('7315019', 'Greco');
+INSERT INTO Ristoranti VALUES('7315025', 'Italiano');
+INSERT INTO Ristoranti VALUES('7315029', 'Sud Americano');
+INSERT INTO Ristoranti VALUES('7315033', 'Messicano');
+INSERT INTO Ristoranti VALUES('7315051', 'Vietnamita');
+INSERT INTO Ristoranti VALUES('7315037', 'Polacco');
