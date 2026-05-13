@@ -15,8 +15,19 @@ if (empty($citta)) {
         </script>";
 }
 
-$url = "https://api.tomtom.com/search/2/categorySearch/restaurant.json?key=" . urlencode($api_key) . "&lat=" . urlencode($lat) . "&lon=" . urlencode($lon) . "&categorySet=" . urlencode($category_id);
+$base_url = "https://api.tomtom.com/search/2/categorySearch/restaurant.json";
+
+$params = [
+        'key'         => $api_key,
+        'lat'         => $lat,
+        'lon'         => $lon,
+        'categorySet' => $category_id,
+        'limit'       => 20
+];
+
+$url = $base_url . "?" . http_build_query($params);
 echo "<script>console.log('lat: " . $lat . ", lon: " . $lon . ", categoryID: " . $category_id . "');</script>";
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
