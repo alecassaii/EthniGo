@@ -10,7 +10,7 @@ This project uses three public APIs: TomTom, Nominatim and WikiData.
 
 TomTom is used to locate restaurants, using coordinates (lat & lon).
 
-To get the API key you need to login on the developer page in TomTom website:
+To get the API key you need to log in on the developer page in TomTom website:
 ```text
 https://developer.tomtom.com/
 ```
@@ -31,21 +31,6 @@ Nominatim is used to get the city coordinates (lat & lon)
 
 ```text
 https://nominatim.openstreetmap.org/search?format=json&city=<CITY_NAME>
-```
-
-## WikiData
-
-WikiData is used to get cities area (in km²), used by TomTom to filter results.
-
-With this we find the city ID by name:
-```text
-https://www.wikidata.org/w/api.php?action=wbsearchentities&search=<CITY_NAME>&language=it&format=json&limit=1
-```
-
-Then we can use the ID to get the area:
-
-```text
-https://www.wikidata.org/wiki/Special:EntityData/<CITY_ID>.json
 ```
 
 ## Database

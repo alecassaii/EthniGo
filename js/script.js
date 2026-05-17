@@ -92,5 +92,20 @@ document.addEventListener('click', function (e) {
 });
 
 function saveRestaurant(restaurant) {
-    console.log('Saving restaurant:', restaurant.poi.name, "|",restaurant.address.freeformAddress, "|", restaurant.poi.phone, "|", restaurant.poi.url);
+    console.log('Saving restaurant:', restaurant.poi.name, "|",restaurant.address.freeformAddress, "|", restaurant.poi.phone, "|", restaurant.poi.url, "|", restaurant.id);
+
+    fetch('../src/salvaRistorante.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(restaurant)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Restaurant saved successfully:', data);
+    })
+    .catch(error => {
+        console.error('Error saving restaurant:', error);
+    });
 }

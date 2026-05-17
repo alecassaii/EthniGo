@@ -1,0 +1,271 @@
+/* ─── Layout pagina ───────────────────────────── */
+body {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    padding: var(--sp-xl) var(--sp-md) var(--sp-2xl);
+}
+
+.page-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xl);
+}
+
+/* ─── Header pagina ───────────────────────────── */
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--sp-md);
+    flex-wrap: wrap;
+
+    animation: cardIn 0.5s var(--ease-out) both;
+}
+
+.page-header-text .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    background: var(--color-primary-soft);
+    border: 1px solid rgba(201, 84, 42, 0.25);
+    color: var(--color-primary-h);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--sp-sm);
+}
+.page-header-text .hero-badge::before {
+    content: '✦';
+    font-size: 0.5rem;
+}
+
+.page-header-text h1 {
+    font-family: var(--font-display), serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.15;
+}
+.page-header-text h1 em {
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.result-count {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    white-space: nowrap;
+    padding-bottom: 4px;
+}
+.result-count strong {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Link "torna indietro" */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: var(--sp-xs);
+    transition: color 0.2s;
+}
+.back-link::before { content: '←'; }
+.back-link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* ─── Griglia card ────────────────────────────── */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: var(--sp-lg);
+}
+
+/* ─── Singola restaurant-card ─────────────────── */
+.restaurant-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+    padding: var(--sp-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+
+    animation: cardIn 0.5s var(--ease-out) both;
+}
+
+/* Stagger animazione sulle card */
+.restaurant-card:nth-child(1)  { animation-delay: 0.04s; }
+.restaurant-card:nth-child(2)  { animation-delay: 0.08s; }
+.restaurant-card:nth-child(3)  { animation-delay: 0.12s; }
+.restaurant-card:nth-child(4)  { animation-delay: 0.16s; }
+.restaurant-card:nth-child(5)  { animation-delay: 0.20s; }
+.restaurant-card:nth-child(6)  { animation-delay: 0.24s; }
+.restaurant-card:nth-child(n+7){ animation-delay: 0.28s; }
+
+.restaurant-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+/* Accento colorato a sinistra — come cartoline su un tavolo */
+.restaurant-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--color-primary), #E8874F);
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+/* ─── Nome ristorante ─────────────────────────── */
+.restaurant-card h2 {
+    font-family: var(--font-display), serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.25;
+    padding-left: var(--sp-sm); /* spazio dalla striscia sinistra */
+}
+
+/* ─── Info rows ───────────────────────────────── */
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+    padding-left: var(--sp-sm);
+}
+
+.card-info p {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-sm);
+    font-size: 0.875rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Icone prima di ogni riga info */
+.card-info p::before {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    margin-top: 1px;
+}
+.card-info p.info-address::before { content: '📍'; }
+.card-info p.info-phone::before   { content: '📞'; }
+.card-info p.info-web::before     { content: '🔗'; }
+
+.card-info strong {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+
+.card-info a {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+.card-info a:hover {
+    color: var(--color-primary-h);
+}
+
+/* ─── Footer card: bottone Salva ──────────────── */
+.card-footer {
+    margin-top: auto;
+    padding-top: var(--sp-md);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: var(--sp-sm);
+}
+
+.save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    padding: 8px 18px;
+    background: transparent;
+    color: var(--color-primary);
+    font-family: var(--font-ui), serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1.5px solid var(--color-primary);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: background 0.2s var(--ease-out), color 0.2s, box-shadow 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+}
+.save-btn::before { content: '♡'; }
+.save-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(201, 84, 42, 0.3);
+    transform: translateY(-1px);
+}
+.save-btn:hover::before { content: '♥'; }
+.save-btn:active {
+    transform: translateY(0);
+}
+
+/* ─── Stato saved ─────────────────────────────── */
+.save-btn.saved {
+    background: var(--color-primary-soft);
+    color: var(--color-primary-h);
+    border-color: var(--color-primary-soft);
+    pointer-events: none;
+}
+.save-btn.saved::before { content: '♥'; }
+
+/* ─── Nessun risultato ────────────────────────── */
+.no-results {
+    text-align: center;
+    padding: var(--sp-2xl) var(--sp-md);
+    color: var(--color-text-muted);
+}
+.no-results::before {
+    content: '🍽️';
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: var(--sp-md);
+}
+.no-results p {
+    font-family: var(--font-display), serif;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 600px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
