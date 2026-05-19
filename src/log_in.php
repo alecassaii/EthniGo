@@ -7,6 +7,7 @@
     <script src="../js/script.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/log_in.css">
+    <link rel="icon" type="image/x-icon" href="../res/favicon.ico">
 </head>
 <body onload="err()">
 <div class="page-wrapper">

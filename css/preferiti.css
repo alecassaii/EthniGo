@@ -1,8 +1,8 @@
-/* ─── Layout pagina ───────────────────────────── */
+/* ─── Layout ──────────────────────────────────── */
 body {
     background-color: var(--color-bg);
     min-height: 100vh;
-    padding: var(--sp-xl) var(--sp-md) var(--sp-2xl);
+    /*padding: var(--sp-xl) var(--sp-md) var(--sp-2xl);*/
 }
 
 .page-wrapper {
@@ -13,7 +13,7 @@ body {
     gap: var(--sp-xl);
 }
 
-/* ─── Header pagina ───────────────────────────── */
+/* ─── Header ──────────────────────────────────── */
 .page-header {
     display: flex;
     align-items: flex-end;
@@ -39,8 +39,8 @@ body {
     margin-bottom: var(--sp-sm);
 }
 .page-header-text .hero-badge::before {
-    content: '✦';
-    font-size: 0.5rem;
+    content: '♥';
+    font-size: 0.6rem;
 }
 
 .page-header-text h1 {
@@ -68,7 +68,6 @@ body {
     font-size: 1rem;
 }
 
-/* Link "torna indietro" */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -80,20 +79,19 @@ body {
     margin-top: var(--sp-xs);
     transition: color 0.2s;
 }
-/*.back-link::before { content: '←'; }*/
 .back-link:hover {
     color: var(--color-primary);
     text-decoration: none;
 }
 
-/* ─── Griglia card ────────────────────────────── */
+/* ─── Griglia due colonne fisse ───────────────── */
 .results-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-lg);
 }
 
-/* ─── Singola restaurant-card ─────────────────── */
+/* ─── Card ────────────────────────────────────── */
 .restaurant-card {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
@@ -106,25 +104,22 @@ body {
     position: relative;
     overflow: hidden;
     transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
-
     animation: cardIn 0.5s var(--ease-out) both;
 }
 
-/* Stagger animazione sulle card */
 .restaurant-card:nth-child(1)  { animation-delay: 0.04s; }
 .restaurant-card:nth-child(2)  { animation-delay: 0.08s; }
 .restaurant-card:nth-child(3)  { animation-delay: 0.12s; }
 .restaurant-card:nth-child(4)  { animation-delay: 0.16s; }
 .restaurant-card:nth-child(5)  { animation-delay: 0.20s; }
-.restaurant-card:nth-child(6)  { animation-delay: 0.24s; }
-.restaurant-card:nth-child(n+7){ animation-delay: 0.28s; }
+.restaurant-card:nth-child(n+6){ animation-delay: 0.24s; }
 
 .restaurant-card:hover {
     box-shadow: var(--shadow-hover);
     transform: translateY(-4px);
 }
 
-/* Accento colorato a sinistra — come cartoline su un tavolo */
+/* Accento laterale — terracotta */
 .restaurant-card::before {
     content: '';
     position: absolute;
@@ -134,14 +129,60 @@ body {
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
-/* ─── Nome ristorante ─────────────────────────── */
-.restaurant-card h2 {
+/* Stato "in rimozione" */
+.restaurant-card.removing {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+    transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+    pointer-events: none;
+}
+
+/* ─── Card top: titolo + cestino ──────────────── */
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--sp-sm);
+    padding-left: var(--sp-sm);
+}
+
+.card-top h2 {
     font-family: var(--font-display), serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-dark);
     line-height: 1.25;
-    padding-left: var(--sp-sm); /* spazio dalla striscia sinistra */
+    flex: 1;
+}
+
+/* ─── Bottone cestino ─────────────────────────── */
+.delete-btn {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.delete-btn svg {
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+}
+.delete-btn:hover {
+    background: #FDE8E8;
+    border-color: var(--color-error);
+    color: var(--color-error);
+    transform: scale(1.1);
+}
+.delete-btn:active {
+    transform: scale(0.95);
 }
 
 /* ─── Info rows ───────────────────────────────── */
@@ -161,8 +202,6 @@ body {
     line-height: 1.5;
     margin: 0;
 }
-
-/* Icone prima di ogni riga info */
 .card-info p::before {
     flex-shrink: 0;
     font-size: 0.9rem;
@@ -181,81 +220,70 @@ body {
     margin-right: 4px;
     white-space: nowrap;
 }
-
 .card-info a {
     color: var(--color-primary);
     font-size: 0.85rem;
     word-break: break-all;
     transition: color 0.2s;
 }
-.card-info a:hover {
-    color: var(--color-primary-h);
-}
+.card-info a:hover { color: var(--color-primary-h); }
 
-/* ─── Footer card: bottone Salva ──────────────── */
+/* ─── Footer card: data salvataggio ──────────── */
 .card-footer {
     margin-top: auto;
     padding-top: var(--sp-md);
     border-top: 1px solid var(--color-border);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     padding-left: var(--sp-sm);
 }
 
-.save-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-xs);
-    padding: 8px 18px;
-    background: transparent;
-    color: var(--color-primary);
-    font-family: var(--font-ui), serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    border: 1.5px solid var(--color-primary);
-    border-radius: var(--radius-pill);
-    cursor: pointer;
-    transition: background 0.2s var(--ease-out), color 0.2s, box-shadow 0.2s, transform 0.15s;
-    letter-spacing: 0.02em;
-}
-.save-btn::before { content: '♡'; }
-.save-btn:hover {
-    background: var(--color-primary);
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(201, 84, 42, 0.3);
-    transform: translateY(-1px);
-}
-.save-btn:hover::before { content: '♥'; }
-.save-btn:active {
-    transform: translateY(0);
+.saved-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-style: italic;
 }
 
-/* ─── Stato saved ─────────────────────────────── */
-.save-btn.saved {
-    background: var(--color-primary-soft);
-    color: var(--color-primary-h);
-    border-color: var(--color-primary-soft);
-    pointer-events: none;
-}
-.save-btn.saved::before { content: '♥'; }
-
-/* ─── Nessun risultato ────────────────────────── */
+/* ─── Nessun preferito ────────────────────────── */
 .no-results {
     text-align: center;
     padding: var(--sp-2xl) var(--sp-md);
     color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-lg);
 }
 .no-results::before {
-    content: '🍽️';
+    content: '♡';
     display: block;
-    font-size: 2.5rem;
-    margin-bottom: var(--sp-md);
+    font-size: 3rem;
+    color: var(--color-border);
 }
 .no-results p {
     font-family: var(--font-display), serif;
     font-size: 1.1rem;
     font-style: italic;
+}
+.btn-cerca-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    padding: 12px 24px;
+    background: var(--color-primary);
+    color: #fff;
+    font-family: var(--font-ui), serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-cerca-link:hover {
+    background: var(--color-primary-h);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(201, 84, 42, 0.3);
+    color: #fff;
+    text-decoration: none;
 }
 
 /* ─── Responsive ─────────────────────────────── */

@@ -11,7 +11,7 @@ session_start();
     <script src="../js/script.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/frgtPswd.css">
-
+    <link rel="icon" type="image/x-icon" href="../res/favicon.ico">
 </head>
 <body>
 <div class="page-wrapper">

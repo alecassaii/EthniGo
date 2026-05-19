@@ -10,6 +10,7 @@ session_start();
     <title>EthniGo — Cerca ristoranti</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utente.css">
+    <link rel="icon" type="image/x-icon" href="../res/favicon.ico">
     <script src="../js/script.js" defer></script>
 </head>
 <body>
