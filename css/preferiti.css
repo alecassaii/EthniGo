@@ -1,4 +1,3 @@
-/* ─── Layout ──────────────────────────────────── */
 body {
     background-color: var(--color-bg);
     min-height: 100vh;
@@ -13,7 +12,6 @@ body {
     gap: var(--sp-xl);
 }
 
-/* ─── Header ──────────────────────────────────── */
 .page-header {
     display: flex;
     align-items: flex-end;
@@ -84,14 +82,12 @@ body {
     text-decoration: none;
 }
 
-/* ─── Griglia due colonne fisse ───────────────── */
 .results-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-lg);
 }
 
-/* ─── Card ────────────────────────────────────── */
 .restaurant-card {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
@@ -119,7 +115,6 @@ body {
     transform: translateY(-4px);
 }
 
-/* Accento laterale — terracotta */
 .restaurant-card::before {
     content: '';
     position: absolute;
@@ -129,7 +124,6 @@ body {
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
-/* Stato "in rimozione" */
 .restaurant-card.removing {
     opacity: 0;
     transform: scale(0.94) translateY(8px);
@@ -137,7 +131,6 @@ body {
     pointer-events: none;
 }
 
-/* ─── Card top: titolo + cestino ──────────────── */
 .card-top {
     display: flex;
     align-items: flex-start;
@@ -155,7 +148,6 @@ body {
     flex: 1;
 }
 
-/* ─── Bottone cestino ─────────────────────────── */
 .delete-btn {
     flex-shrink: 0;
     width: 34px;
@@ -185,7 +177,6 @@ body {
     transform: scale(0.95);
 }
 
-/* ─── Info rows ───────────────────────────────── */
 .card-info {
     display: flex;
     flex-direction: column;
@@ -228,7 +219,6 @@ body {
 }
 .card-info a:hover { color: var(--color-primary-h); }
 
-/* ─── Footer card: data salvataggio ──────────── */
 .card-footer {
     margin-top: auto;
     padding-top: var(--sp-md);
@@ -243,7 +233,6 @@ body {
     font-style: italic;
 }
 
-/* ─── Nessun preferito ────────────────────────── */
 .no-results {
     text-align: center;
     padding: var(--sp-2xl) var(--sp-md);
@@ -286,7 +275,6 @@ body {
     text-decoration: none;
 }
 
-/* ─── Responsive ─────────────────────────────── */
 @media (max-width: 600px) {
     .results-grid {
         grid-template-columns: 1fr;

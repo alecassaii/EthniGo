@@ -1,17 +1,14 @@
-/* ─── Override body: la homepage è full-screen ── */
 body {
     overflow: hidden;
     height: 100vh;
 }
 
 body::before {
-    /* stessa texture ambient di style.css, ma più intensa */
     background-image:
             radial-gradient(ellipse 70% 60% at 15% 20%, rgba(201, 84, 42, 0.18) 0%, transparent 55%),
             radial-gradient(ellipse 50% 40% at 85% 80%, rgba(28, 43, 58, 0.20) 0%, transparent 55%);
 }
 
-/* ─── Background hero ────────────────────────── */
 .background-image {
     position: relative;
     width: 100%;
@@ -21,14 +18,11 @@ body::before {
     overflow: hidden;
 }
 
-/* Immagine di sfondo tramite pseudo-element
-   (l'iframe viene sostituito con questo approccio) */
 .background-image::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        /* velo scuro sopra l'immagine per leggibilità */
             linear-gradient(
                     160deg,
                     rgba(28, 43, 58, 0.62) 0%,
@@ -38,7 +32,6 @@ body::before {
     z-index: 1;
 }
 
-/* L'iframe del banner diventa il vero sfondo */
 .background-image iframe {
     position: absolute;
     inset: 0;
@@ -50,7 +43,6 @@ body::before {
     z-index: 0;
 }
 
-/* ─── Navbar ──────────────────────────────────── */
 .navbar {
     position: relative;
     z-index: 10;
@@ -59,7 +51,6 @@ body::before {
     justify-content: space-between;
     padding: var(--sp-lg) var(--sp-2xl);
 
-    /* Vetro smerigliato */
     background: rgba(28, 43, 58, 0.45);
     backdrop-filter: blur(14px) saturate(1.4);
     -webkit-backdrop-filter: blur(14px) saturate(1.4);
@@ -73,7 +64,6 @@ body::before {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Logo ────────────────────────────────────── */
 .logo {
     font-family: var(--font-display), serif;
     font-size: 1.7rem;
@@ -84,7 +74,6 @@ body::before {
     position: relative;
 }
 
-/* puntino terracotta dopo il logo */
 .logo::after {
     content: '.';
     color: var(--color-primary);
@@ -93,7 +82,6 @@ body::before {
     vertical-align: -4px;
 }
 
-/* ─── Nav links ───────────────────────────────── */
 .nav-links {
     list-style: none;
     display: flex;
@@ -121,7 +109,6 @@ body::before {
 
 }
 
-/* Bottone CTA primario — Registrazione */
 .nav-links li:last-child a {
     background: var(--color-primary);
     color: #fff;
@@ -133,7 +120,6 @@ body::before {
     box-shadow: 0 4px 18px rgba(201, 84, 42, 0.45);
 }
 
-/* ─── Welcome hero text ───────────────────────── */
 .welcome {
     position: relative;
     z-index: 10;
@@ -163,7 +149,6 @@ body::before {
     text-shadow: 0 2px 20px rgba(28, 43, 58, 0.4);
 }
 
-/* Parola accentuata in italic terracotta */
 .welcome h1 em {
     font-style: italic;
     color: #F0A070;
@@ -179,7 +164,6 @@ body::before {
     max-width: 480px;
 }
 
-/* ─── CTA buttons sotto l'hero ────────────────── */
 .welcome-cta {
     display: flex;
     gap: var(--sp-md);
@@ -255,7 +239,6 @@ body::before {
     font-size: 0.55rem;
 }
 
-/* ─── Indicatore scroll in basso ─────────────── */
 .scroll-hint {
     position: absolute;
     bottom: var(--sp-xl);
@@ -285,7 +268,6 @@ body::before {
     50%       { opacity: 0.8; transform: translateX(-50%) translateY(6px); }
 }
 
-/* ─── Footer ─────────────────────────────────── */
 .site-footer {
     position: absolute;
     bottom: 0;
@@ -329,7 +311,6 @@ body::before {
     margin: 0 6px;
 }
 
-/* ─── Responsive ─────────────────────────────── */
 @media (max-width: 640px) {
     .navbar {
         padding: var(--sp-md) var(--sp-lg);

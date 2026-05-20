@@ -1,8 +1,7 @@
-/* ─── Intestazione sopra la card ────────────── */
 .page-wrapper::before {
   content: 'Bentornato';
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-style: italic;
   font-size: 0.95rem;
   color: var(--color-text-muted);
@@ -17,13 +16,11 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Sovrascrittura del titolo per questa pagina ── */
 .form-title::after {
   content: '.';
   color: var(--color-primary);
 }
 
-/* ─── Link "Hai dimenticato la password?" ───── */
 .form > a {
   font-size: 0.82rem;
   color: var(--color-text-muted);
@@ -36,13 +33,11 @@
   text-decoration: none;
 }
 
-/* ─── Separatore visuale tra submit e signup ── */
 .form .submit + a + .signup-link {
   padding-top: var(--sp-sm);
   border-top: 1px solid var(--color-border);
 }
 
-/* ─── Icona decorativa nella card (Unicode fork) */
 .form::after {
   content: '⸬';
   position: absolute;

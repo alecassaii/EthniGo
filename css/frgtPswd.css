@@ -1,10 +1,8 @@
-/* ─── Card più stretta: solo un campo ────────── */
 .form {
   max-width: 400px;
   text-align: center;
 }
 
-/* ─── Icona tappa sopra il titolo ────────────── */
 .form-icon {
   display: inline-flex;
   align-items: center;
@@ -24,7 +22,6 @@
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* ─── Sottotitolo descrittivo ─────────────────── */
 .form-subtitle {
   font-size: 0.88rem;
   color: var(--color-text-muted);
@@ -33,13 +30,11 @@
   margin-bottom: var(--sp-sm);
 }
 
-/* ─── Input email centrato ────────────────────── */
 .input-container input[type="email"] {
   text-align: center;
   letter-spacing: 0.01em;
 }
 
-/* ─── Pulsante con icona freccia ─────────────── */
 .submit {
   display: flex;
   align-items: center;
@@ -51,11 +46,8 @@
   font-size: 1rem;
   transition: transform 0.2s var(--ease-out);
 }
-.submit:hover::after {
-  transform: translateX(4px);
-}
+.submit:hover::after { transform: translateX(4px); }
 
-/* ─── Link per tornare al login ───────────────── */
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -64,15 +56,10 @@
   color: var(--color-text-muted);
   margin-top: var(--sp-sm);
 }
-.back-link::before {
-  content: '←';
-}
+.back-link::before { content: '←'; }
 .back-link:hover {
   color: var(--color-primary);
   text-decoration: none;
 }
 
-/* ─── Pagina con sfondo leggermente diverso ───── */
-body {
-  background-color: #EEE9E0;
-}
+body { background-color: #EEE9E0; }

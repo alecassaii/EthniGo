@@ -87,6 +87,9 @@ session_start();
             </button>
 
         </form>
+
+        <!-- Logout -->
+        <button class="step-divider" style="border-color: transparent !important; cursor: pointer" onclick="window.location.href='log_in.php'">Logout</button>
     </div>
 
 </div>

@@ -1,4 +1,3 @@
-/* ─── Layout pagina ───────────────────────────── */
 body {
     background-color: var(--color-bg);
     min-height: 100vh;
@@ -13,7 +12,6 @@ body {
     gap: var(--sp-xl);
 }
 
-/* ─── Header pagina ───────────────────────────── */
 .page-header {
     display: flex;
     align-items: flex-end;
@@ -68,7 +66,6 @@ body {
     font-size: 1rem;
 }
 
-/* Link "torna indietro" */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -86,14 +83,12 @@ body {
     text-decoration: none;
 }
 
-/* ─── Griglia card ────────────────────────────── */
 .results-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-lg);
 }
 
-/* ─── Singola restaurant-card ─────────────────── */
 .restaurant-card {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
@@ -110,7 +105,6 @@ body {
     animation: cardIn 0.5s var(--ease-out) both;
 }
 
-/* Stagger animazione sulle card */
 .restaurant-card:nth-child(1)  { animation-delay: 0.04s; }
 .restaurant-card:nth-child(2)  { animation-delay: 0.08s; }
 .restaurant-card:nth-child(3)  { animation-delay: 0.12s; }
@@ -124,7 +118,6 @@ body {
     transform: translateY(-4px);
 }
 
-/* Accento colorato a sinistra — come cartoline su un tavolo */
 .restaurant-card::before {
     content: '';
     position: absolute;
@@ -134,7 +127,6 @@ body {
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
-/* ─── Nome ristorante ─────────────────────────── */
 .restaurant-card h2 {
     font-family: var(--font-display), serif;
     font-size: 1.15rem;
@@ -144,7 +136,6 @@ body {
     padding-left: var(--sp-sm); /* spazio dalla striscia sinistra */
 }
 
-/* ─── Info rows ───────────────────────────────── */
 .card-info {
     display: flex;
     flex-direction: column;
@@ -162,7 +153,6 @@ body {
     margin: 0;
 }
 
-/* Icone prima di ogni riga info */
 .card-info p::before {
     flex-shrink: 0;
     font-size: 0.9rem;
@@ -192,7 +182,6 @@ body {
     color: var(--color-primary-h);
 }
 
-/* ─── Footer card: bottone Salva ──────────────── */
 .card-footer {
     margin-top: auto;
     padding-top: var(--sp-md);
@@ -231,7 +220,6 @@ body {
     transform: translateY(0);
 }
 
-/* ─── Stato saved ─────────────────────────────── */
 .save-btn.saved {
     background: var(--color-primary-soft);
     color: var(--color-primary-h);
@@ -240,7 +228,6 @@ body {
 }
 .save-btn.saved::before { content: '♥'; }
 
-/* ─── Nessun risultato ────────────────────────── */
 .no-results {
     text-align: center;
     padding: var(--sp-2xl) var(--sp-md);
@@ -258,7 +245,6 @@ body {
     font-style: italic;
 }
 
-/* ─── Responsive ─────────────────────────────── */
 @media (max-width: 600px) {
     .results-grid {
         grid-template-columns: 1fr;
